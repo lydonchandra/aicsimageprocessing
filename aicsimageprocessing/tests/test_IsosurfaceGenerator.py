@@ -16,7 +16,6 @@ class TestIsosurfaceGenerator(unittest.TestCase):
         self.assertTrue(True)
 
     @staticmethod
-    @unittest.skip("temporarily disabled")
     def testSphere(radius=30):
         bounding_cube = np.zeros(
             (radius * 2 + 3, radius * 2 + 3, radius * 2 + 3)
@@ -37,7 +36,6 @@ class TestIsosurfaceGenerator(unittest.TestCase):
         mesh.save_as_obj("img/test_sphere.obj")
 
     @staticmethod
-    @unittest.skip("temporarily disabled")
     def testCube(size=3):
         # these cubes appear to have strangely beveled edges but I think that is an
         # artifact of the
@@ -51,8 +49,7 @@ class TestIsosurfaceGenerator(unittest.TestCase):
         mesh.save_as_obj("img/test_cube.obj")
 
     @staticmethod
-    @unittest.skip("temporarily disabled")
     def testCellImage():
-        with AICSImage("./img/img40_1.ome.tif") as cell_image:
+        with AICSImage("img/AICS-10_5_13.ome.tif") as cell_image:
             mesh = isosurfaceGenerator.generate_mesh(cell_image, channel=4)
         mesh.save_as_obj("img/test_file.obj")

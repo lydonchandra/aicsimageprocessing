@@ -44,7 +44,7 @@ class Mesh:
             writer.write("g Object001\n")
             for v in self.verts:
                 writer.write("v  {:.6f}  {:.6f}  {:.6f}\n".format(v[0], v[1], v[2]))
-            if self.normals:
+            if self.normals.any():
                 for n in self.normals:
                     writer.write(
                         "vn  {:.6f}  {:.6f}  {:.6f}\n".format(n[0], n[1], n[2])
